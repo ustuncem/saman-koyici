@@ -31,8 +31,7 @@ export default {
       },
       fontFamily: {
         primary: ['Dancing Script', 'sans-serif'],
-        secondary: ['Poppins', 'sans-serif'],
-        complementary: ['Roboto', 'sans-serif'],
+        secondary: ['Noto Serif', 'sans-serif'],
       },
     },
   },
