@@ -14,15 +14,15 @@ const {mainTitle, mainTitleEN, items} = Astro.props;
 <article class="mb-8 last:mb-0">
   <!-- MENU ITEM HEADING -->
   <div class="mb-4">
-    <h1 class="font-primary font-bold text-2xl text-primary">
-      {mainTitle}
-      <span class="font-primary font-bold text-xl text-secondary ml-2">{mainTitleEN}</span>
+    <h1 class="font-primary font-bold text-3xl text-primary">
+      {mainTitle} /
+      <span class="font-primary font-bold text-lg text-secondary ml-2">{mainTitleEN}</span>
     </h1>
   </div>
 
   {
     items.map((item, idx) => (
-      <FoodMenuItem {...item} containerStyle={idx !== items.length - 1 ? 'mb-4' : ''} />
+      <FoodMenuItem {...item} containerStyle={idx !== items.length - 1 ? 'mb-8' : ''} />
     ))
   }
 
