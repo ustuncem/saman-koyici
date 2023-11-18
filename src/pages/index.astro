@@ -2,7 +2,7 @@
 import {getCollection} from 'astro:content';
 
 import Layout from '../layouts/Layout.astro';
-import FoodMenuMainItem from '@components/FoodMenuMainItem.astro';
+import FoodMenuMainItem from '@components/FoodMenuMainItem.tsx';
 
 const menu = await getCollection('menu');
 const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
@@ -11,11 +11,13 @@ const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
 <Layout title="Menü">
   <div class="cut-layout overflow-y-auto pr-4 w-full">
     {
-      orderedMenu.map(item => (
+      orderedMenu.map((item, idx) => (
         <FoodMenuMainItem
+          client:visible
           mainTitle={item.data.mainTitle}
           mainTitleEN={item.data.mainTitleEN}
           items={item.data.items}
+          containerStyles={`${orderedMenu.length - 1 === idx ? '' : 'mb-8'}`}
         />
       ))
     }

@@ -3,13 +3,19 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "rootDir": ".",
-    "baseUrl": ".",
+    "baseUrl": "C:/Users/Cem/Desktop/saman-koyici",
     "paths": {
-      "@components": ["./src/components/index"],
-      "@components/*": ["./src/components/*"],
+      "@components": [
+        "./src/components/index"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
       "@assets/*": [
         "src/assets/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }
