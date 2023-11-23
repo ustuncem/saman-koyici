@@ -27,10 +27,10 @@ export default function FoodMenuMainItem({mainTitle, mainTitleEN, items, contain
   return (
     <article className={`w-full overflow-hidden ${containerStyles}`}>
       <div class="flex justify-between gap-x-4 hover:cursor-pointer" onClick={handleClick}>
-        <h1 class="font-primary font-bold text-4xl text-primary">
+        <h1 class="font-secondary font-bold text-xl text-primary">
           {mainTitle}
           <br />
-          <span class="font-primary font-bold text-2xl text-secondary">{mainTitleEN}</span>
+          <span class="font-secondary font-bold text-lg text-secondary">{mainTitleEN}</span>
         </h1>
         <img
           src={arrow}
