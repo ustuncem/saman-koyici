@@ -1,0 +1,37 @@
+---
+import {documentToHtmlString} from '@contentful/rich-text-html-renderer';
+import type {EntryFieldTypes} from 'contentful';
+
+import {contentfulClient} from '../lib/contentful';
+
+import Layout from '../layouts/Layout.astro';
+import FoodMenuMainItem from '@components/FoodMenuMainItem.tsx';
+
+interface MenuItem extends EntryFieldTypes.Symbol<string> {
+  contentTypeId: 'menuItem';
+  fields: {
+    title: EntryFieldTypes.Text;
+  };
+}
+
+interface MenuCategory {
+  contentTypeId: 'menuCategory';
+  fields: {
+    title: EntryFieldTypes.Text;
+    order: EntryFieldTypes.Number;
+    menuItems: EntryFieldTypes.Array<MenuItem>;
+  };
+}
+
+const entries = await contentfulClient.getEntries<MenuCategory>({
+  content_type: 'menuCategory',
+});
+
+entries.items.forEach(item => console.log(item.fields.menuItems));
+---
+
+<Layout title="Menü">
+  <div class="cut-layout overflow-y-auto pr-4 w-full">
+    <p>Selam</p>
+  </div>
+</Layout>
