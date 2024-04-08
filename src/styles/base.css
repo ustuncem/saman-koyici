@@ -9,8 +9,20 @@
   }
 }
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 @layer components {
   .cut-layout {
-    @apply h-[calc(100dvh-15rem)] lg:h-[calc(100dvh-17rem)];
+    @apply h-[calc(100dvh-16rem)] lg:h-[calc(100dvh-18rem)];
   }
 }

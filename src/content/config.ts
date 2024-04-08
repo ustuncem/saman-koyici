@@ -19,6 +19,20 @@ const menuCollection = defineCollection({
   }),
 });
 
+const allergenCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    items: z.array(
+      z.object({
+        id: z.number(),
+        title: z.string(),
+        icon: z.string(),
+      })
+    ),
+  }),
+});
+
 export const collections = {
   menu: menuCollection,
+  allergenIcons: allergenCollection,
 };

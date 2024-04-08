@@ -2,8 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "moduleResolution": "node",
-    "rootDir": ".",
-    "baseUrl": "C:/Users/Cem/Desktop/saman-koyici",
+    "baseUrl": ".",
     "paths": {
       "@components": [
         "./src/components/index"

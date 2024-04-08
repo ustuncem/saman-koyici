@@ -3,25 +3,31 @@ import {getCollection} from 'astro:content';
 
 import Layout from '../layouts/Layout.astro';
 import FoodMenuMainItem from '@components/FoodMenuMainItem.tsx';
+import AllergenIconBox from '@components/AllergenIconBox.astro';
 
 const menu = await getCollection('menu');
+const allergenIcons = await getCollection('allergenIcons');
 const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Menü">
-  <div class="cut-layout overflow-y-auto pr-4 w-full">
-    {
-      orderedMenu.map((item, idx) => (
-        <FoodMenuMainItem
-          client:visible
-          mainTitle={item.data.mainTitle}
-          mainTitleEN={item.data.mainTitleEN}
-          items={item.data.items}
-          containerStyles={`${orderedMenu.length - 1 === idx ? '' : 'mb-8'}`}
-        />
-      ))
-    }
-
-    <p class="mt-8 text-center text-sm">Hesaplarınıza yüzde 10 servis ücreti eklenmektedir.</p>
+  <div class="cut-layout pr-4 w-full">
+    <div class="flex gap-x-4 no-scrollbar overflow-x-auto">
+      {allergenIcons[0].data.items.map((item, idx) => <AllergenIconBox {...item} />)}
+    </div>
+    <div class="overflow-y-auto h-full no-scrollbar">
+      {
+        orderedMenu.map((item, idx) => (
+          <FoodMenuMainItem
+            client:visible
+            mainTitle={item.data.mainTitle}
+            mainTitleEN={item.data.mainTitleEN}
+            items={item.data.items}
+            containerStyles={`${orderedMenu.length - 1 === idx ? '' : 'mb-8'}`}
+          />
+        ))
+      }
+      <p class="mt-8 text-center text-sm">Hesaplarınıza yüzde 10 servis ücreti eklenmektedir.</p>
+    </div>
   </div>
 </Layout>
