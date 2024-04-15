@@ -12,9 +12,9 @@ const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="Menü">
   <div class="cut-layout pr-4 w-full">
-    <!-- <div class="flex gap-x-4 no-scrollbar overflow-x-auto">
+    <div class="flex mb-4 no-scrollbar overflow-x-auto overflow-y-hidden h-20">
       {allergenIcons[0].data.items.map((item, idx) => <AllergenIconBox {...item} />)}
-    </div> -->
+    </div>
     <div class="overflow-y-auto h-full no-scrollbar">
       {
         orderedMenu.map((item, idx) => (

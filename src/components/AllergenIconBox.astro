@@ -14,7 +14,7 @@ if (!images[icon])
   throw new Error(`"${icon}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<div class=`h-full w-20 w-full flex flex-col items-center`>
-  <Image class="w-12 h-12" alt={title} src={images[icon]()} />
+<div class=`grow-0 shrink-0 basis-[105px] flex flex-col items-center justify-start`>
+  <Image class="h-full w-full" alt={title} src={images[icon]()} />
   <p class="text-center">{title}</p>
 </div>

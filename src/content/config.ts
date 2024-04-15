@@ -14,6 +14,7 @@ const menuCollection = defineCollection({
         price: z.string(),
         description: z.string(),
         descriptionEN: z.string(),
+        icons: z.string().optional(),
       })
     ),
   }),

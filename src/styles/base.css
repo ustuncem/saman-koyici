@@ -23,6 +23,6 @@
 
 @layer components {
   .cut-layout {
-    @apply h-[calc(100dvh-14rem)] lg:h-[calc(100dvh-16rem)];
+    @apply h-[calc(100dvh-21rem)] lg:h-[calc(100dvh-23rem)];
   }
 }
