@@ -30,7 +30,7 @@ export default function FoodMenuItem({
               icons
                 .split(',')
                 .map(icon => (
-                  <img src={`/src/assets/icons/allergen/${icon}.svg`} className="w-6 h-6 mt-2" />
+                  <img src={`/assets/icons/allergen/${icon}.svg`} className="w-6 h-6 mt-2" />
                 ))}
           </span>
         </span>
