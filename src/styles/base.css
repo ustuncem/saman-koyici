@@ -19,6 +19,17 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /* This styles the entire scrollbar (including track and thumb) */
+  .allergen::-webkit-scrollbar {
+    height: 2px; /* height of the horizontal scrollbar */
+    @apply bg-primary-200;
+  }
+
+  /* This styles the draggable part of the scrollbar */
+  .allergen::-webkit-scrollbar-thumb {
+    @apply bg-primary-400;
+  }
 }
 
 @layer components {
