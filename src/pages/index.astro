@@ -4,6 +4,7 @@ import {getCollection} from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import FoodMenuMainItem from '@components/FoodMenuMainItem.tsx';
 import AllergenIconBox from '@components/AllergenIconBox.astro';
+import Popup from '@components/Popup';
 
 const menu = await getCollection('menu');
 const allergenIcons = await getCollection('allergenIcons');
@@ -11,6 +12,7 @@ const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Menü">
+  <Popup client:visible />
   <div class="cut-layout pr-4 w-full">
     <div class="flex mb-4 allergen overflow-x-auto overflow-y-hidden h-24">
       {allergenIcons[0].data.items.map((item, idx) => <AllergenIconBox {...item} />)}
